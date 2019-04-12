@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Test2.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <webopt:bundlereference runat="server" path="~/Content/styles.css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <div runat="server">
+        
+
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="Content/img/logo-easy-connect_SBS.png" alt="logo">
+                </div>
+
+                <div class="content-right">
+                    <div class="avatar">
+                        <img src="Content/img/senior.png" alt="user-avatar">
+                        <div class="notifications">
+                            <p class="notification-number"><% Response.Write(user.Users[0].Notifications);%></p>
+                        </div>
+                        <p class="user-name">
+                            <% Response.Write(user.Users[0].Name);%>
+                        </p>
+                    </div>
+
+                    <div class="settings">
+                        <img src="Content/img/config.png" alt="settings">
+                        <p>SETTINGS</p>
+                    </div>
+
+                    <div class="dot">
+                        <img src="Content/img/dot3.png" alt="dot3">
+                    </div>
+
+                    <div class="logout">
+                        <img src="Content/img/1419365876_on-off.png" alt="logout">
+                        <p>LOGOUT</p>
+                    </div>
+                </div>
+            </nav>
+            
+                <asp:ContentPlaceHolder ID="AppContainer" runat="server">
+                </asp:ContentPlaceHolder>
+
+            
+        </div>
+        <script src="Scripts/calendar.js"></script>
+ </div>
+    
+</body>
+</html>
